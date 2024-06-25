@@ -1,0 +1,9 @@
+---
+- hosts: all
+  tasks:
+    - name: Clone a private repository into repos folder.
+      git:
+        repo: git@github.com:janet280/nginx.git
+        dest: "/home/ansadmin/repos"
+        accept_hostkey: yes
+      become_flags: "-E"
